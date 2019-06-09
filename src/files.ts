@@ -1,5 +1,5 @@
 import * as path from 'path'
-import { globFiles } from 'aria-build';
+import { globFiles } from 'aria-fs';
 
 export async function getTestFiles(dir: string) {
   const patterns = [ 
@@ -22,5 +22,4 @@ export async function getSourceFiles(dir: string) {
   ]
   const files = await globFiles(patterns)
   return files.filter(file => file && validateExtension(file))
-
 }

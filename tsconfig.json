@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "esNext",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "esNext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib" :[
-      "dom",
-      "es2015",
-      "es2017"
-    ],
     "allowJs": true
-  }
+  },
+  "include": [
+    "examples/**/*.ts",
+    "src/**/*"
+  ]
 }

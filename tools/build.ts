@@ -3,9 +3,7 @@ import { clean, bundle, TSRollupConfig } from 'aria-build'
 (async function() {
 
   const external = [
-    'aria-build',
     'mocha',
-    'path',
     'istanbul-api',
     'istanbul-lib-hook',
     'istanbul-lib-instrument',
@@ -23,7 +21,10 @@ import { clean, bundle, TSRollupConfig } from 'aria-build'
       tsconfig: {
         compilerOptions: {
           declaration: true
-        }
+        },
+        exclude: [
+          'examples'
+        ]
       }
     },
     {

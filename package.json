@@ -5,7 +5,7 @@
   "main": "aria-mocha.js",
   "scripts": {
     "build": "ts-node --project tools/tsconfig.json tools/build.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-node --project tools/tsconfig.json tools/run.ts"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,12 @@
     "url": "https://github.com/aelbore/aria-mocha/issues"
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
-  "dependencies": {
-    "aria-build": "0.0.5",
+  "peerDependencies": {
     "chai": "^4.2.0",
+    "sinon": "^7.3.2"
+  },
+  "dependencies": {
+    "commander": "^2.20.0",
     "istanbul-api": "^2.1.6",
     "mocha": "^6.1.4"
   },
@@ -30,6 +33,10 @@
     "@types/istanbul-lib-hook": "^2.0.0",
     "@types/istanbul-lib-instrument": "^1.7.3",
     "@types/istanbul-lib-report": "^1.1.1",
-    "@types/mocha": "^5.2.7"
+    "@types/mocha": "^5.2.7",
+    "@types/sinon": "^7.0.13",
+    "sinon": "^7.3.2",
+    "chai": "^4.2.0",
+    "aria-build": "0.0.6"
   }
 }
