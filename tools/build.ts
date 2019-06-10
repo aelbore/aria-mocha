@@ -1,6 +1,8 @@
-import { clean, bundle, TSRollupConfig } from 'aria-build'
+import * as path from 'path'
+import { clean, bundle, globFiles, copyFiles, TSRollupConfig } from 'aria-build'
 
 (async function() {
+  const binFiles = await globFiles('bin/**/*')
 
   const external = [
     'mocha',
@@ -39,4 +41,7 @@ import { clean, bundle, TSRollupConfig } from 'aria-build'
 
   await clean('dist')
   await bundle(options)
+  await Promise.all(binFiles.map(binFile => {
+    return copyFiles(binFile, path.join('dist', 'bin'))
+  }))
 })()

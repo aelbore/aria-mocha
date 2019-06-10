@@ -1,11 +1,15 @@
 {
   "name": "aria-mocha",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "aria-mocha.js",
+  "bin": {
+    "aria": "./bin/aria.js"
+  },
   "scripts": {
     "build": "ts-node --project tools/tsconfig.json tools/build.ts",
-    "test": "ts-node --project tools/tsconfig.json tools/run.ts"
+    "link": "ts-node --project tools/tsconfig.json tools/link.ts",
+    "test": "./dist/bin/aria.js test examples --mocha --check-coverage --include-dir examples --threshold statements=50,functions=50,branches=50,lines=50"
   },
   "repository": {
     "type": "git",
@@ -18,10 +22,6 @@
     "url": "https://github.com/aelbore/aria-mocha/issues"
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
-  "peerDependencies": {
-    "chai": "^4.2.0",
-    "sinon": "^7.3.2"
-  },
   "dependencies": {
     "commander": "^2.20.0",
     "istanbul-api": "^2.1.6",
