@@ -1,17 +1,24 @@
 #!/usr/bin/env node
 
 const path = require('path')
-const tsconfig = require(path.resolve('tsconfig.json'))
+const fs = require('fs')
+
+const TS_CONFIG_PATH = path.resolve('tsconfig.jso')
 
 const tsconfigDefaults = {
   "target": "esNext",
   "module": "commonjs"
 }
 
+const compilerOptions = (fs.existsSync(TS_CONFIG_PATH) 
+  ? require(TS_CONFIG_PATH).compilerOptions:
+  {}
+)
+
 require('ts-node').register({
   typeCheck: false,
   compilerOptions: {
-    ...tsconfig.compilerOptions,
+    ...compilerOptions,
     ...tsconfigDefaults
   }
 })
