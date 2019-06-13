@@ -1,8 +1,10 @@
 
-async function test() {
+export async function test() {
   const program = require('commander')
-  const pkg = require('../package.json')  
+  const pkg = require('../package.json')
+
   const run = require('aria-mocha').run
+  const parseCoverageOptions = require('./options').parseCoverageOptions
 
   /**
    * aria test demo \
@@ -18,31 +20,8 @@ async function test() {
     .option('-c, --check-coverage [checkCoverage]')
     .option('-i, --include-dir [include]')
     .option('-t, --threshold [thresholds]')
+    .option('-r, --reporters [reporters]')
     .action(action)
-
-    function parseThresholds(options) {
-      const thresholds = {}
-      options.threshold.split(',').map(key => key.split('='))
-        .forEach(threshold => {
-          thresholds[threshold[0]] = parseInt(threshold[1])
-        })
-      return thresholds
-    }
-
-    function parseCoverageOptions(options) {
-      const { threshold, includeDir, checkCoverage } = options
-
-      const thresholds = (threshold && !(typeof threshold === 'boolean') 
-        ? parseThresholds(options): {}) 
-
-      return {
-        src: includeDir,
-        coverageOptions: {
-          checkCoverage,
-          thresholds
-        }
-      }
-    }
 
     async function action(command, dir = 'src', options) {
       if (command) {
@@ -61,5 +40,3 @@ async function test() {
   
     program.parse(process.argv); 
 }
-
-exports.test = test

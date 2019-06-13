@@ -17,7 +17,7 @@ import { clean, bundle, globFiles, copyFiles, TSRollupConfig } from 'aria-build'
       input: './src/index.ts',
       external,
       output: {
-        file: './dist/aria-mocha.es.js',
+        file: './dist/aria-mocha.js',
         format: 'es'
       },
       tsconfig: {
@@ -27,14 +27,6 @@ import { clean, bundle, globFiles, copyFiles, TSRollupConfig } from 'aria-build'
         exclude: [
           'examples'
         ]
-      }
-    },
-    {
-      input: './src/index.ts',
-      external,
-      output: {
-        file: './dist/aria-mocha.js',
-        format: 'cjs'
       }
     }
   ]

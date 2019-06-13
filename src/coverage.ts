@@ -24,7 +24,10 @@ async function addFileCoverage(coverageMap: CoverageMap, coverageVar: any) {
   }))
 }
 
-async function reportCoverage(coverageMap: CoverageMap, thresholds: ThresholdOptions) {
+async function reportCoverage(coverageMap: CoverageMap, options: CoverageOptions) {
+  const thresholds = options.thresholds ? options.thresholds: {} 
+  const reporters = options.reporters ? options.reporters: []
+
   const overrides = {
     check: {
       global: { ...thresholds },
@@ -37,7 +40,8 @@ async function reportCoverage(coverageMap: CoverageMap, thresholds: ThresholdOpt
 
   reporter.addAll([ 
     'text-summary', 
-    'html' 
+    'lcov',
+    ...reporters
   ])
 
   reporter.write(coverageMap)
@@ -46,12 +50,12 @@ async function reportCoverage(coverageMap: CoverageMap, thresholds: ThresholdOpt
   await checkThreshold(config.check.global, globalSummary)
 }
 
-async function report(thresholds: ThresholdOptions) {
-  const coverageVar = global.__coverage__;
+async function report(options: CoverageOptions) {
+  const coverageVar = global.__coverage__
 
   const coverageMap = createCoverageMap()
   await addFileCoverage(coverageMap, coverageVar)
-  await reportCoverage(coverageMap, thresholds)
+  await reportCoverage(coverageMap, options)
 }
 
 async function setup(src: string) {
@@ -94,7 +98,8 @@ export interface ThresholdOptions {
 }
 
 export interface CoverageOptions {
-  thresholds?: ThresholdOptions,
+  thresholds?: ThresholdOptions;
+  reporters?: string[];
   checkCoverage?: boolean;
 }
 
@@ -105,7 +110,7 @@ export async function coverage(src: string, options: CoverageOptions = {}) {
   return {
     report() {
       return options.checkCoverage 
-        ? report(options.thresholds): Promise.resolve()
+        ? report(options): Promise.resolve()
     }
   }
 }
