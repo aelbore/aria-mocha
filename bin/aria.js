@@ -7,7 +7,11 @@ const TS_CONFIG_PATH = path.resolve('tsconfig.jso')
 
 const tsconfigDefaults = {
   "target": "esNext",
-  "module": "commonjs"
+  "module": "commonjs",
+  "lib" :[
+    "dom", "es2015", "es2017"
+  ],
+  "allowJs": true
 }
 
 const compilerOptions = (fs.existsSync(TS_CONFIG_PATH) 

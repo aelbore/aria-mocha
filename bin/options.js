@@ -7,7 +7,7 @@ function parseThresholds(options) {
   return thresholds
 }
 
-function parseCoverageOptions(options) {
+export function parseCoverageOptions(options) {
   const { threshold, includeDir, checkCoverage } = options
 
   const thresholds = (threshold && !(typeof threshold === 'boolean'))
@@ -25,6 +25,3 @@ function parseCoverageOptions(options) {
     }
   }
 }
-
-exports.parseThresholds = parseThresholds
-exports.parseCoverageOptions = parseCoverageOptions

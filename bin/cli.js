@@ -3,9 +3,6 @@ export async function test() {
   const program = require('commander')
   const pkg = require('../package.json')
 
-  const run = require('aria-mocha').run
-  const parseCoverageOptions = require('./options').parseCoverageOptions
-
   /**
    * aria test demo \
    *  --mocha \
@@ -32,6 +29,11 @@ export async function test() {
     async function execute({ command, dir, options }) {
       if (options) {
         dir = dir ? dir: 'src'
+
+        const [ run, parseCoverageOptions ] = await Promise.all([
+          import('aria-mocha').then(es => es.run),
+          import('./options').then(es => es.parseCoverageOptions)
+        ])
         
         const coverageOptions = parseCoverageOptions(options)
         await run(dir, { ...coverageOptions })
