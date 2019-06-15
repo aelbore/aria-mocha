@@ -1,11 +1,7 @@
 import * as path from 'path'
-import { CoverageMap, createCoverageMap, CoverageSummary } from 'istanbul-lib-coverage';
-import { hookRequire, TransformerOptions } from 'istanbul-lib-hook';
 
-import * as istanbul from './istanbul-api'
-import { createReporter } from './istanbul-api'
+import { CoverageMap, createCoverageMap, CoverageSummary, hookRequire, TransformerOptions, createInstrumenter, createReporter, config } from './libs';
 import { getSourceFiles } from './files'
-import { createInstrumenter } from 'istanbul-lib-instrument';
 
 declare var global: any;
 
@@ -35,8 +31,8 @@ async function reportCoverage(coverageMap: CoverageMap, options: CoverageOptions
     }
   }
 
-  const config = istanbul.config.loadObject(overrides)
-  const reporter = createReporter(config, path.resolve('coverage'))
+  const objConfig = config.loadObject(overrides)
+  const reporter = createReporter(objConfig, path.resolve('coverage'))
 
   reporter.addAll([ 
     'text-summary', 
@@ -47,7 +43,7 @@ async function reportCoverage(coverageMap: CoverageMap, options: CoverageOptions
   reporter.write(coverageMap)
 
   const globalSummary = coverageMap.getCoverageSummary()
-  await checkThreshold(config.check.global, globalSummary)
+  await checkThreshold(objConfig.check.global, globalSummary)
 }
 
 async function report(options: CoverageOptions) {

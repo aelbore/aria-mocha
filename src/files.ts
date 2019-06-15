@@ -1,5 +1,5 @@
 import * as path from 'path'
-import { globFiles } from 'aria-fs';
+import { globFiles } from './libs';
 
 export async function getTestFiles(dir: string) {
   const patterns = [ 

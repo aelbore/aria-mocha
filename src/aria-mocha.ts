@@ -1,6 +1,5 @@
-import * as Mocha from 'mocha'
-
 import { getTestFiles } from './files'
+import { Mocha } from './libs'
 import { coverage, CoverageOptions } from './coverage'
 
 const mocha = new Mocha()

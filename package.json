@@ -1,7 +1,7 @@
 {
   "name": "aria-mocha",
   "version": "0.0.1",
-  "description": "",
+  "description": "Simple Testing for your nodejs",
   "main": "aria-mocha.js",
   "bin": {
     "aria": "./bin/aria.js"
@@ -15,7 +15,12 @@
     "type": "git",
     "url": "git+https://github.com/aelbore/aria-mocha.git"
   },
-  "keywords": [],
+  "keywords": [
+    "test",
+    "mocha",
+    "coverage",
+    "istanbul"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
