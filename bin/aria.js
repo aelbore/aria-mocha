@@ -3,7 +3,7 @@
 const path = require('path')
 const fs = require('fs')
 
-const TS_CONFIG_PATH = path.resolve('tsconfig.jso')
+const TS_CONFIG_PATH = path.resolve('tsconfig.json')
 
 const tsconfigDefaults = {
   "target": "esNext",

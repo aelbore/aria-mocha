@@ -1,6 +1,6 @@
 {
   "name": "aria-mocha",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple Testing for your nodejs",
   "main": "aria-mocha.js",
   "bin": {
