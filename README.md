@@ -1,5 +1,8 @@
+[![npm version](https://badge.fury.io/js/aria-mocha.svg)](https://www.npmjs.com/package/aria-mocha)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 # aria-mocha
-Simple Testing for your nodejs
+Simple Testing tool for your nodejs
 
 Installation
 ------------
