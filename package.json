@@ -1,0 +1,35 @@
+{
+  "name": "aria-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "aria-mocha.js",
+  "scripts": {
+    "build": "ts-node --project tools/tsconfig.json tools/build.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aelbore/aria-mocha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aelbore/aria-mocha/issues"
+  },
+  "homepage": "https://github.com/aelbore/aria-mocha#readme",
+  "dependencies": {
+    "aria-build": "0.0.5",
+    "chai": "^4.2.0",
+    "istanbul-api": "^2.1.6",
+    "mocha": "^6.1.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/istanbul": "^0.4.30",
+    "@types/istanbul-lib-hook": "^2.0.0",
+    "@types/istanbul-lib-instrument": "^1.7.3",
+    "@types/istanbul-lib-report": "^1.1.1",
+    "@types/mocha": "^5.2.7"
+  }
+}
