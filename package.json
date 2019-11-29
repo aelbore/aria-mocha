@@ -1,15 +1,14 @@
 {
   "name": "aria-mocha",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple Testing for your nodejs",
   "main": "aria-mocha.js",
   "bin": {
     "aria": "./bin/aria.js"
   },
   "scripts": {
-    "build": "ts-node --project tools/tsconfig.json tools/build.ts",
-    "link": "ts-node --project tools/tsconfig.json tools/link.ts",
-    "test": "./dist/bin/aria.js test examples --mocha --check-coverage --include-dir examples --threshold statements=50,functions=50,branches=50,lines=50"
+    "build": "aria-build -d --external mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
+    "test": "node ./dist/bin/aria.js test examples --mocha --check-coverage --include-dir examples --threshold statements=50,functions=50,branches=50,lines=50"
   },
   "repository": {
     "type": "git",
@@ -21,27 +20,27 @@
     "coverage",
     "istanbul"
   ],
-  "author": "",
+  "author": "Arjay Elbore",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aelbore/aria-mocha/issues"
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
   "dependencies": {
-    "commander": "^2.20.0",
+    "commander": "^2.20.3",
     "istanbul-api": "^2.1.6",
-    "mocha": "^6.1.4"
+    "mocha": "^6.2.2"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
+    "@types/chai": "^4.2.5",
     "@types/istanbul": "^0.4.30",
     "@types/istanbul-lib-hook": "^2.0.0",
     "@types/istanbul-lib-instrument": "^1.7.3",
     "@types/istanbul-lib-report": "^1.1.1",
     "@types/mocha": "^5.2.7",
-    "@types/sinon": "^7.0.13",
-    "sinon": "^7.3.2",
+    "@types/sinon": "^7.5.1",
+    "sinon": "^7.5.0",
     "chai": "^4.2.0",
-    "aria-build": "0.0.6"
+    "aria-build": "0.0.14"
   }
 }

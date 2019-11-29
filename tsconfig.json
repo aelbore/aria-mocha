@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "esNext",
+    "target": "es2018",
     "module": "esNext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "outDir": "dist",
     "lib" :[
       "dom",
       "es2015",
