@@ -1,10 +1,10 @@
 {
   "name": "aria-mocha",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple Testing for your nodejs",
   "main": "aria-mocha.js",
   "bin": {
-    "aria": "./bin/aria-mocha.js"
+    "aria-mocha": "./bin/aria-mocha.js"
   },
   "scripts": {
     "build": "aria-build -d --external mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
