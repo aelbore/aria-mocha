@@ -5,15 +5,16 @@ import { coverage, CoverageOptions } from './coverage'
 const mocha = new Mocha()
 
 export interface TestOptions {
+  dir?: string;
   src?: string;
   coverageOptions?: CoverageOptions;
 }
 
-export async function run(dir: string, options: TestOptions = {}) {
-  const src = options.src ? options.src : 'src'
+export async function cliRun(options?: TestOptions) {
+  const { dir, src, coverageOptions } = options
 
   const files = await getTestFiles(dir)
-  const codeCoverage = await coverage(src, options.coverageOptions)
+  const codeCoverage = await coverage(src, coverageOptions)
 
   await Promise.all(files.map(file => {
     mocha.addFile(file)

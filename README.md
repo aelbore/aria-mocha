@@ -13,10 +13,10 @@ Installation
 Quick Start
 ------------
   ```
-   aria test demo \
-   --mocha \
-   --check-coverage \
-   --include-dir demo \
-   --reporters lcov,html,text-summary \
-   --threshold statements=50,functions=50,branches=50,lines=50
+   aria-mocha 
+    --dir demo \
+    --check-coverage \
+    --include-dir demo \
+    --reporters lcov,html,text-summary \
+    --threshold statements=50,functions=50,branches=50,lines=50
   ```

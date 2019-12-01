@@ -1,21 +1,22 @@
-import { copy, symlinkDir } from './node_modules/aria-build/aria-build';
 
-function link() {
-  return {
-    name: 'link',
-    'buildEnd': () => symlinkDir('./dist', './node_modules/aria-mocha')
-  }
+import { copy, linkToPackages, replaceContent } from './node_modules/aria-build/aria-build';
+
+function replace(filename: string) {
+  return replaceContent({ filename, strToFind: '../src',  strToReplace: '../aria-mocha' })
 }
 
 export default {
-  plugins: {
-    after: [
-      copy({
-        targets: [
-          { src: 'bin/*', dest: 'dist/bin' } 
-        ]
-      }),
-      link()
-    ]
-  }
+  plugins: [
+    copy({
+      targets: [
+        { src: 'bin/aria-mocha.js', dest: 'dist/bin', replace } 
+      ]
+    }),
+    linkToPackages({ 
+      moduleDir: 'aria-mocha',
+      targets: [
+        { package: 'aria-fs' }
+      ]
+    })
+  ]
 }
