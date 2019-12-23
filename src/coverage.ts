@@ -13,14 +13,29 @@ function logThresholdMessage(thresholds, message) {
   }
 }
 
-async function addFileCoverage(coverageMap: CoverageMap, coverageVar: any) {
-  const coverageKeys = Object.keys(coverageVar)
-  await Promise.all(coverageKeys.map(filename => {
-    coverageMap.addFileCoverage(coverageVar[filename])
-  }))
+async function report(options?: CoverageOptions) {
+  const coverageVar = global.__coverage__
+
+  const coverageMap = createCoverageMap()
+  await addFileCoverage(coverageMap, coverageVar)
+  await reportCoverage(coverageMap, options)
 }
 
-async function reportCoverage(coverageMap: CoverageMap, options: CoverageOptions) {
+async function setup(src: string) {
+  const files = await getSourceFiles(src)
+  const instrumenter = createInstrumenter()
+
+  const transformer = (code: string, options: TransformerOptions) => {
+    return instrumenter.instrumentSync(code, options.filename)
+  }
+  const hookMatcher = (file: string) => files.includes(file)
+  hookRequire(hookMatcher, transformer, { 
+    verbose: false, 
+    extensions: [ '.js', '.ts' ] 
+  })
+}
+
+export async function reportCoverage(coverageMap: CoverageMap, options: CoverageOptions) {
   const thresholds = options.thresholds ? options.thresholds: {} 
   const reporters = options.reporters ? options.reporters: []
 
@@ -46,26 +61,11 @@ async function reportCoverage(coverageMap: CoverageMap, options: CoverageOptions
   await checkThreshold(objConfig.check.global, globalSummary)
 }
 
-async function report(options?: CoverageOptions) {
-  const coverageVar = global.__coverage__
-
-  const coverageMap = createCoverageMap()
-  await addFileCoverage(coverageMap, coverageVar)
-  await reportCoverage(coverageMap, options)
-}
-
-async function setup(src: string) {
-  const files = await getSourceFiles(src)
-  const instrumenter = createInstrumenter()
-
-  const transformer = (code: string, options: TransformerOptions) => {
-    return instrumenter.instrumentSync(code, options.filename)
-  }
-  const hookMatcher = (file: string) => files.includes(file)
-  hookRequire(hookMatcher, transformer, { 
-    verbose: false, 
-    extensions: [ '.js', '.ts' ] 
-  })
+export async function addFileCoverage(coverageMap: CoverageMap, coverageVar: any) {
+  const coverageKeys = Object.keys(coverageVar)
+  await Promise.all(coverageKeys.map(filename => {
+    coverageMap.addFileCoverage(coverageVar[filename])
+  }))
 }
 
 export function checkThreshold(thresholds: ThresholdOptions, summary: CoverageSummary) {
