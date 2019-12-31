@@ -10,7 +10,7 @@ function parseThresholds(options?: CommandLineOptions) {
   return thresholds
 }
 
-export function updateOptios(options?: CommandLineOptions) {
+export function updateOptions(options?: CommandLineOptions) {
   return {
     ...options,
     checkCoverage: options['check-coverage'],

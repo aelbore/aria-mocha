@@ -1,6 +1,5 @@
-import { parseCoverageOptions, updateOptios } from './cli-utils'
-import { CommandLineOptions, DEFAULT_OPTIONS } from './cli-options'
-import { cliRun } from './cli-run'
+import { DEFAULT_OPTIONS } from './cli-options'
+import { handler } from './cli-handler'
 
 export async function run(version: string) {
   const program = require('sade')('aria-mocha', true)
@@ -14,10 +13,4 @@ export async function run(version: string) {
     .option('--include-dir', 'Directory folder source (default: src)')
     .action(handler)
     .parse(process.argv)
-
-  async function handler(opts?: CommandLineOptions) {
-    const options = updateOptios(opts);
-    const coverageOptions = parseCoverageOptions(options)
-    await cliRun(coverageOptions)
-  }
 }

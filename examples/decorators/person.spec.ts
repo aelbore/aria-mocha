@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { expect } from '../../src/expect'
 import { Person, Watch } from './person'
 
 import * as sinon from 'sinon';
@@ -16,18 +16,18 @@ describe('Person', () => {
 
   it('should set the property [name]', () => {
     person.name = 'Jane'
-    expect(person.name).eq('Jane')
+    expect(person.name).equal('Jane')
   })
 
   it('should get the property [name]', () => {
-    expect(person.name).eq(undefined)
+    expect(person.name).toBeUndefined()
   })
 
   it('should call onPropertyChanged', () => {
     const onChanged = sinon.spy(person, 'onPropertyChanged')
 
     person.name = 'Jane'
-    expect(onChanged.called).to.true
+    expect(onChanged.called).toBeTrue()
   })
 
   it('should set the initial value of props', () => {
@@ -39,7 +39,7 @@ describe('Person', () => {
     Watch('name')(PersonFake, 'onChanged')
 
     /// @ts-ignore
-    expect(PersonFake.constructor.props['name']).to.eq('onChanged')
+    expect(PersonFake.constructor.props['name']).equal('onChanged')
   })
 
   it('should not set the initial value of props', () => {
@@ -50,7 +50,7 @@ describe('Person', () => {
 
     Watch('name')(PersonFake, 'onChanged')
     /// @ts-ignore
-    expect(PersonFake.constructor.props['name']).to.eq('onChanged')    
+    expect(PersonFake.constructor.props['name']).equal('onChanged')    
   })
 
 })

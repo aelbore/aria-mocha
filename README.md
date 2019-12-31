@@ -10,6 +10,22 @@ Installation
     npm install --save-dev aria-mocha
   ```
 
+CLI Options
+------------
+```
+  Usage
+    $ aria-mocha [options]
+
+  Options
+    -d, --dir           Directory folder of spec or test files. (default: src)  (default src)
+    -t, --threshold     Enable the thresholds
+    -r, --reporters     Output reporters.  (default lcov,html,text-summary)
+    --check-coverage    Enable coverage  (default false)
+    --include-dir       Directory folder source (default: src)
+    -v, --version       Displays current version
+    -h, --help          Displays this message
+```
+
 Quick Start
 ------------
   ```

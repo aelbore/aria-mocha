@@ -29,5 +29,4 @@ require('ts-node').register({
 })
 
 const pkg = require('../package.json')
-
 require('../src').run(pkg.version)
