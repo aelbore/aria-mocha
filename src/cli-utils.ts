@@ -1,5 +1,5 @@
 import { CommandLineOptions } from './cli-options'
-import { ThresholdOptions } from './coverage'
+import { ThresholdOptions } from './common'
 
 function parseThresholds(options?: CommandLineOptions) {
   const thresholds = {}
@@ -10,7 +10,7 @@ function parseThresholds(options?: CommandLineOptions) {
   return thresholds
 }
 
-export function updateOptios(options?: CommandLineOptions) {
+export function updateOptions(options?: CommandLineOptions) {
   return {
     ...options,
     checkCoverage: options['check-coverage'],

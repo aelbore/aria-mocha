@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "aria-build -d --external mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
-    "test": "node ./dist/bin/aria-mocha.js --dir examples --check-coverage --threshold statements=50,functions=50,branches=50,lines=50"
+    "test.examples": "node ./dist/bin/aria-mocha.js --dir examples --check-coverage --threshold statements=50,functions=50,branches=50,lines=50",
+    "test": "node ./bin/aria-mocha.js --dir src --check-coverage --threshold statements=50,functions=50,branches=50,lines=50"
   },
   "repository": {
     "type": "git",

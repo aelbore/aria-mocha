@@ -1,14 +1,9 @@
 import { getTestFiles } from './files'
 import { Mocha } from './libs'
-import { coverage, CoverageOptions } from './coverage'
+import { coverage } from './coverage'
+import { TestOptions } from './cli-options'
 
 const mocha = new Mocha()
-
-export interface TestOptions {
-  dir?: string;
-  src?: string;
-  coverageOptions?: CoverageOptions;
-}
 
 export async function cliRun(options?: TestOptions) {
   const { dir, src, coverageOptions } = options

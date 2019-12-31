@@ -1,4 +1,4 @@
-import { parseCoverageOptions, updateOptios } from './cli-utils'
+import { parseCoverageOptions, updateOptions } from './cli-utils'
 import { CommandLineOptions, DEFAULT_OPTIONS } from './cli-options'
 import { cliRun } from './cli-run'
 
@@ -16,7 +16,7 @@ export async function run(version: string) {
     .parse(process.argv)
 
   async function handler(opts?: CommandLineOptions) {
-    const options = updateOptios(opts);
+    const options = updateOptions(opts);
     const coverageOptions = parseCoverageOptions(options)
     await cliRun(coverageOptions)
   }

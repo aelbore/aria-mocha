@@ -1,3 +1,5 @@
+import { CoverageOptions } from './common';
+
 export const DEFAULT_OPTIONS = Object.freeze({
   REPORTERS: 'lcov,html,text-summary',
   CHECK_COVERAGE: false,
@@ -11,4 +13,10 @@ export interface CommandLineOptions {
   checkCoverage?: boolean;
   reporters?: string;
   includeDir?: string;
+}
+
+export interface TestOptions {
+  dir?: string;
+  src?: string;
+  coverageOptions?: CoverageOptions;
 }
