@@ -8,8 +8,9 @@
   },
   "scripts": {
     "help": "node ./bin/aria-mocha.js --help",
-    "build": "aria-build -d --external assert,mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
-    "test": "node ./bin/aria-mocha.js --dir examples --check-coverage --threshold statements=50,functions=50,branches=50,lines=50"
+    "build": "aria-build -d --external assert,mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage,aria-build",
+    "test": "node ./bin/aria-mocha.js --dir ./examples/node --check-coverage --threshold statements=50,functions=50,branches=50,lines=50",
+    "specs": "node ./bin/aria-mocha.js --browser --dir ./examples/browser"
   },
   "repository": {
     "type": "git",
@@ -27,23 +28,32 @@
     "url": "https://github.com/aelbore/aria-mocha/issues"
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
+  "peerDependencies": {
+    "puppeteer": "^2.0.0"
+  },
   "dependencies": {
+    "aria-build": "0.0.24",
     "istanbul-api": "^2.1.6",
-    "mocha": "^6.2.2",
+    "mocha": "^7.0.0",
+    "mocha-teamcity-reporter": "^3.0.0",
     "sade": "^1.7.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.7",
     "@types/istanbul": "^0.4.30",
     "@types/istanbul-lib-hook": "^2.0.0",
     "@types/istanbul-lib-instrument": "^1.7.3",
     "@types/istanbul-lib-report": "^1.1.1",
     "@types/mocha": "^5.2.7",
     "@types/mock-fs": "^4.10.0",
-    "@types/node": "^13.1.1",
+    "@types/node": "^13.1.6",
+    "@types/puppeteer": "^2.0.0",
     "@types/sinon": "^7.5.1",
-    "aria-build": "0.0.22",
+    "chai": "^4.2.0",
+    "lit-element": "^2.2.1",
     "mock-fs": "^4.10.4",
-    "sinon": "^8.0.1",
+    "puppeteer": "^2.0.0",
+    "sinon": "^8.0.4",
     "typescript": "^3.7.4"
   }
 }

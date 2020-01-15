@@ -1,5 +1,6 @@
 import * as Mocha from 'mocha'
 import * as Istanbul from 'istanbul-api'
+import * as puppeteer from 'puppeteer'
 
 interface ConfigOptions {
   loadObject: (obj: any, overrides?: any) => any
@@ -18,4 +19,4 @@ export { hookRequire, TransformerOptions } from 'istanbul-lib-hook'
 export { createInstrumenter } from 'istanbul-lib-instrument'
 export { globFiles } from 'aria-fs'
 export { config, createReporter, ConfigOptions }
-export { Mocha }
+export { Mocha, puppeteer }

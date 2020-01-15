@@ -6,15 +6,21 @@ export interface TestOptions {
   coverageOptions?: CoverageOptions;
 }
 
+export interface TestCustomOptions extends TestOptions {
+  files: string[]
+}
+
 export const DEFAULT_OPTIONS = Object.freeze({
   REPORTERS: 'lcov,html,text-summary',
   CHECK_COVERAGE: false,
-  TEST_DIRECTORY: 'src'
+  TEST_DIRECTORY: 'src',
+  IS_BROWSER: false
 })
 
 export interface CommandLineOptions {
   dir?: string;
   src?: string;
+  browser?: boolean;
   threshold?: string;
   checkCoverage?: boolean;
   reporters?: string;

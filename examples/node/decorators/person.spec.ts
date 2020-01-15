@@ -1,4 +1,4 @@
-import { expect } from '../../src/expect'
+import { expect } from '../../../src/expect'
 import { Person, Watch } from './person'
 
 import * as sinon from 'sinon';
