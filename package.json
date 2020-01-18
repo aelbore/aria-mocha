@@ -8,7 +8,7 @@
   },
   "scripts": {
     "help": "node ./bin/aria-mocha.js --help",
-    "build": "aria-build -d --external assert,mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
+    "build": "aria-build -d --external aria-mocha-headless,assert,mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
     "test": "node ./bin/aria-mocha.js --dir examples --check-coverage --threshold statements=50,functions=50,branches=50,lines=50"
   },
   "repository": {

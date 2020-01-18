@@ -11,6 +11,7 @@ export async function run(version: string) {
     .option('-r, --reporters', 'Output reporters.', DEFAULT_OPTIONS.REPORTERS)
     .option('--check-coverage', 'Enable coverage', DEFAULT_OPTIONS.CHECK_COVERAGE)
     .option('--include-dir', 'Directory folder source (default: src)')
+    .option('--browser', 'Enable the browser base testing', false)
     .action(handler)
     .parse(process.argv)
 }

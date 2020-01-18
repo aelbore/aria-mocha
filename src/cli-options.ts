@@ -19,4 +19,5 @@ export interface CommandLineOptions {
   checkCoverage?: boolean;
   reporters?: string;
   includeDir?: string;
+  browser?: boolean;
 }

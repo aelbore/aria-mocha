@@ -5,15 +5,13 @@
     "module": "esNext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "outDir": "dist",
     "lib" :[
       "dom",
       "es2015",
       "es2017"
     ],
-    "allowJs": true,
-    "paths": {
-      "src/*": [ "./src/*" ]
-    }
+    "allowJs": true
   }
 }
