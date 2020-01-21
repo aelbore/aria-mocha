@@ -3,7 +3,7 @@ import { updateOptions, parseCoverageOptions } from './cli-utils'
 import { cliRun } from './cli-run'
 import { getTestFiles } from './files'
 
-export async function handler(opts?: CommandLineOptions) {
+export async function handler(opts?: CommandLineOptions) { 
   const options = updateOptions(opts);
   const coverageOptions = parseCoverageOptions(options)
   !opts.browser 
@@ -11,7 +11,7 @@ export async function handler(opts?: CommandLineOptions) {
     : (async function() {
         const files = await getTestFiles(options.dir)
         const opts = {
-          dir: options.dir,
+          ...options,
           files
         }
         const browser = await import('aria-mocha-headless')

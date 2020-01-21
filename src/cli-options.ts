@@ -20,4 +20,5 @@ export interface CommandLineOptions {
   reporters?: string;
   includeDir?: string;
   browser?: boolean;
+  config?: string;
 }
