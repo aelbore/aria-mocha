@@ -19,7 +19,7 @@ export function updateOptions(options?: CommandLineOptions) {
 }
 
 export function parseCoverageOptions(options?: CommandLineOptions) {
-  const { threshold, includeDir, checkCoverage, dir } = options
+  const { threshold, includeDir, checkCoverage, dir, config } = options
 
   const thresholds: ThresholdOptions = (threshold && !(typeof threshold === 'boolean'))
     ? parseThresholds(options): {}
@@ -34,6 +34,7 @@ export function parseCoverageOptions(options?: CommandLineOptions) {
       checkCoverage,
       thresholds,
       reporters
-    }
+    },
+    config
   }
 }
