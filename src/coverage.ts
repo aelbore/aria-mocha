@@ -46,7 +46,7 @@ async function reportCoverage(coverageMap: CoverageMap, options: CoverageOptions
   await checkThreshold(objConfig.check.global, globalSummary)
 }
 
-async function report(options: CoverageOptions) {
+async function report(options?: CoverageOptions) {
   const coverageVar = global.__coverage__
 
   const coverageMap = createCoverageMap()

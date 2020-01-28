@@ -11,7 +11,7 @@ export async function handler(opts?: CommandLineOptions) {
     : (async function() {
         const files = await getTestFiles(options.dir)
         const opts = {
-          ...options,
+          ...coverageOptions,
           files
         }
         const browser = await import('aria-mocha-headless')
