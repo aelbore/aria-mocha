@@ -8,7 +8,7 @@
   },
   "scripts": {
     "help": "node ./bin/aria-mocha.js --help",
-    "build": "aria-build -d --external aria-mocha-headless,assert,mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
+    "build": "aria-build -d --external aria-fs,aria-mocha-headless,assert,mocha,istanbul-api,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
     "test": "node ./bin/aria-mocha.js --dir examples --check-coverage --threshold statements=50,functions=50,branches=50,lines=50"
   },
   "repository": {
@@ -27,7 +27,11 @@
     "url": "https://github.com/aelbore/aria-mocha/issues"
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
+  "peerDependencies": {
+    "aria-mocha-headless": ">= 0.1.0"
+  },
   "dependencies": {
+    "aria-fs": "^0.0.9",
     "istanbul-api": "^2.1.6",
     "chai": "^4.2.0",
     "mocha": "^7.0.0",

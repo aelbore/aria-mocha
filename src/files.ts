@@ -1,6 +1,6 @@
 import { globFiles } from './libs';
 
-export async function getTestFiles(dir: string) {
+export async function getTestFiles(dir: string, relative?: boolean) {
   const patterns = [ 
     '**/*.spec.ts', 
     '**/*.spec.js',
@@ -9,11 +9,11 @@ export async function getTestFiles(dir: string) {
   ]
   const files = await globFiles(patterns.map(pattern => {
     return `${dir}/${pattern}`
-  }))
+  }), relative)
   return files.filter(file => file)
 }
 
-export async function getSourceFiles(dir: string) {
+export async function getSourceFiles(dir: string, relative?: boolean) {
   const validateExtension = (file: string) => {
     return !file.includes('.spec') && !file.includes('.test')
   }
@@ -21,6 +21,6 @@ export async function getSourceFiles(dir: string) {
     `${dir}/**/*.ts`, 
     `${dir}/**/*.js` 
   ]
-  const files = await globFiles(patterns)
+  const files = await globFiles(patterns, relative)
   return files.filter(file => file && validateExtension(file))
 }
