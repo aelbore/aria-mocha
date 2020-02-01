@@ -20,8 +20,10 @@ CLI Options
     -d, --dir           Directory folder of spec or test files. (default: src)  (default src)
     -t, --threshold     Enable the thresholds
     -r, --reporters     Output reporters.  (default lcov,html,text-summary)
+    -c, --config        config file of aria-build. i.e aria.config.ts
     --check-coverage    Enable coverage  (default false)
     --include-dir       Directory folder source (default: src)
+    --browser           Enable the browser base testing  (default false)
     -v, --version       Displays current version
     -h, --help          Displays this message
 ```
@@ -30,6 +32,7 @@ Quick Start
 ------------
   ```
    aria-mocha 
+    --browser
     --dir demo \
     --check-coverage \
     --include-dir demo \
