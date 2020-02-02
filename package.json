@@ -27,9 +27,6 @@
     "url": "https://github.com/aelbore/aria-mocha/issues"
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
-  "peerDependencies": {
-    "aria-mocha-headless": ">= 0.1.0"
-  },
   "dependencies": {
     "aria-fs": "^0.0.9",
     "istanbul-api": "^2.1.6",
