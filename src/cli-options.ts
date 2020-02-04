@@ -22,3 +22,5 @@ export interface CommandLineOptions {
   browser?: boolean;
   config?: string;
 }
+
+export { TestAriaConfigOptions } from 'aria-build'
