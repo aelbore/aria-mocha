@@ -21,6 +21,7 @@ export interface CommandLineOptions {
   includeDir?: string;
   browser?: boolean;
   config?: string;
+  resolve?: string | boolean;
 }
 
 export { TestAriaConfigOptions } from 'aria-build'
