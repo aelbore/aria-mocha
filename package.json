@@ -1,6 +1,6 @@
 {
   "name": "aria-mocha",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple Testing for your nodejs",
   "main": "aria-mocha.js",
   "bin": {
@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
   "peerDependencies": {
-    "aria-fs": ">= ^0.1.0",
-    "aria-build": ">= ^0.1.0",
-    "aria-mocha-headless": ">= 0.1.0"
+    "aria-fs": ">= ^0.1.0 <= ^0.2.1",
+    "aria-build": ">= ^0.1.0 <= ^0.2.1",
+    "aria-mocha-headless": ">= 0.1.0 <= ^0.2.1"
   },
   "dependencies": {
     "istanbul-api": "^2.1.6",
