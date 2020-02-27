@@ -1,6 +1,6 @@
 {
   "name": "aria-mocha",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple Testing for your nodejs",
   "main": "aria-mocha.js",
   "bin": {
@@ -35,7 +35,7 @@
   "dependencies": {
     "istanbul-api": "^2.1.6",
     "chai": "^4.2.0",
-    "mocha": "^7.0.1",
+    "mocha": "^7.1.0",
     "sade": "^1.7.3"
   },
   "devDependencies": {
