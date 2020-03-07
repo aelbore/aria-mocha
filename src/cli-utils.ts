@@ -1,4 +1,4 @@
-import { CommandLineOptions } from './cli-options'
+import { CommandLineOptions, TestOptions } from './cli-options'
 import { ThresholdOptions } from './coverage'
 
 function parseThresholds(options?: CommandLineOptions) {
@@ -19,7 +19,7 @@ export function updateOptions(options?: CommandLineOptions) {
 }
 
 export function parseCoverageOptions(options?: CommandLineOptions) {
-  const { threshold, includeDir, checkCoverage, dir, config, resolve } = options
+  const { threshold, includeDir, checkCoverage, dir, config, resolve, target } = options
 
   const thresholds: ThresholdOptions = (threshold && !(typeof threshold === 'boolean'))
     ? parseThresholds(options): {}
@@ -27,7 +27,7 @@ export function parseCoverageOptions(options?: CommandLineOptions) {
   const reporters = (options.reporters && !(typeof options.reporters === 'boolean'))
     ? options.reporters.split(','): []
 
-  return {
+  const opts: TestOptions = {
     src: includeDir ?? dir,
     dir,
     coverageOptions: {
@@ -36,6 +36,9 @@ export function parseCoverageOptions(options?: CommandLineOptions) {
       reporters
     },
     config,
-    resolve
+    resolve,
+    target
   }
+
+  return opts
 }
