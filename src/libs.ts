@@ -13,9 +13,17 @@ const createReporter = (cfg: any, opts: any) => {
   return Istanbul.createReporter(cfg, opts)
 }
 
+const getInstanbul = async () => {
+  const { config, createReporter } = await import('istanbul-api')
+  return {
+    config,
+    createReporter
+  }
+}
+
 export { CoverageMap, createCoverageMap, CoverageSummary } from 'istanbul-lib-coverage'
 export { hookRequire, TransformerOptions } from 'istanbul-lib-hook'
 export { createInstrumenter } from 'istanbul-lib-instrument'
 export { globFiles } from 'aria-fs'
-export { config, createReporter, ConfigOptions }
+export { config, createReporter, ConfigOptions, getInstanbul }
 export { Mocha }

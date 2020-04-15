@@ -1,4 +1,4 @@
-import { CoverageOptions } from './coverage';
+import { CoverageOptions } from '../coverage';
 
 export const DEFAULT_OPTIONS = Object.freeze({
   REPORTERS: 'lcov,html,text-summary',
@@ -8,6 +8,8 @@ export const DEFAULT_OPTIONS = Object.freeze({
 
 export interface TestOptions {
   dir?: string
+  file?: string
+  files?: string | string[]
   src?: string
   coverageOptions?: CoverageOptions
   target?: string
@@ -16,11 +18,10 @@ export interface TestOptions {
 }
 
 export interface CommandLineOptions extends Omit<TestOptions, 'coverageOptions'> {
+  _?: string[]
   threshold?: string
   checkCoverage?: boolean
   reporters?: string
   includeDir?: string
   browser?: boolean
 }
-
-export { TestAriaConfigOptions } from 'aria-build'

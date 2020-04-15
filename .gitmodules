@@ -1,3 +1,0 @@
-[submodule "packages/aria-fs"]
-	path = packages/aria-fs
-	url = https://github.com/aelbore/aria-fs.git

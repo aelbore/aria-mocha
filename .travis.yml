@@ -1,0 +1,16 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js: '13.13.0'
+branches:
+  only:
+  - master
+before_install:
+  - npm install -g yarn --cache-min 999999999
+  - yarn add aria-fs aria-build --dev
+install: 
+  - yarn install
+script:
+  - yarn build && yarn test
+after_success:
+  - yarn coveralls
