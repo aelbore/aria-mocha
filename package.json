@@ -10,7 +10,8 @@
     "help": "node ./bin/aria-mocha.js --help",
     "pretest": "ts-node --project ./tools/tsconfig.json ./tools/pre-test.ts",
     "build": "aria-build -d --external aria-fs,aria-build,aria-mocha-headless,assert,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
-    "test": "node ./bin/aria-mocha.js --file ./tmp --include-dir ./tmp --check-coverage"
+    "test": "node ./bin/aria-mocha.js --file ./tmp --include-dir ./tmp --check-coverage",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -47,7 +48,7 @@
     "@types/istanbul-lib-report": "^3.0.0",
     "@types/mocha": "^7.0.2",
     "@types/mock-fs": "^4.10.0",
-    "@types/node": "^13.11.1",
+    "@types/node": "^13.13.0",
     "@types/puppeteer": "^2.0.1",
     "@types/sinon": "^9.0.0",
     "coveralls": "^3.0.11",

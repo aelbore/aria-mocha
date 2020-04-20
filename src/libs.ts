@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import * as Mocha from 'mocha'
 import * as Istanbul from 'istanbul-api'
 

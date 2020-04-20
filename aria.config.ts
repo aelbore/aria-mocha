@@ -1,5 +1,5 @@
 
-import { copy, replaceContent } from './node_modules/aria-build/aria-build';
+import { copy, replaceContent } from 'aria-build'
 
 function replace(filename: string) {
   return replaceContent({ filename, strToFind: '../src',  strToReplace: '../aria-mocha' })

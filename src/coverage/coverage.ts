@@ -8,14 +8,14 @@ export interface CoverageOptions {
   checkCoverage?: boolean;
 }
 
-export async function coverage(src: string, options: CoverageOptions = {}) {
-  options.checkCoverage 
+export async function coverage(src: string, options?: CoverageOptions) {
+  options?.checkCoverage 
     && await setup(src)
 
   return {
     report() {
-      return options.checkCoverage 
-        ? report(options): Promise.resolve()
+      options?.checkCoverage
+        && report(options)
     }
   }
 }

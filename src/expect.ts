@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import * as assert from 'assert'
 
 export interface ExpectAssertion {

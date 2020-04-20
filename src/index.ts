@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export * from './cli'
 export * from './fs/fs'
 export * from './coverage'
