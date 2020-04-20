@@ -1,6 +1,6 @@
 import * as sinon from 'sinon'
 
-import { expect } from 'aria-mocha'
+import { expect } from '../expect'
 import { coverage } from './coverage'
 
 describe('coverage', () => {
