@@ -37,7 +37,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "istanbul-api": "^2.1.6",
-    "mocha": "^7.1.1",
+    "mocha": "^7.1.2",
     "sade": "^1.7.3"
   },
   "devDependencies": {
@@ -48,11 +48,11 @@
     "@types/istanbul-lib-report": "^3.0.0",
     "@types/mocha": "^7.0.2",
     "@types/mock-fs": "^4.10.0",
-    "@types/node": "^13.13.2",
+    "@types/node": "^13.13.4",
     "@types/puppeteer": "^2.0.1",
     "@types/sinon": "^9.0.0",
-    "coveralls": "^3.0.14",
-    "mock-fs": "^4.11.0",
+    "coveralls": "^3.1.0",
+    "mock-fs": "^4.12.0",
     "mock-require": "^3.0.3",
     "sinon": "^9.0.2",
     "typescript": "^3.8.3"
