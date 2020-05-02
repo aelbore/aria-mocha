@@ -1,15 +1,16 @@
 {
   "name": "aria-mocha",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Simple Testing for your nodejs",
   "main": "aria-mocha.js",
+  "module": "aria-mocha.es.js",
   "bin": {
     "aria-mocha": "./bin/aria-mocha.js"
   },
   "scripts": {
     "help": "node ./bin/aria-mocha.js --help",
     "pretest": "ts-node --project ./tools/tsconfig.json ./tools/pre-test.ts",
-    "build": "aria-build -d --external aria-fs,aria-build,aria-mocha-headless,assert,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
+    "build": "aria-build -d --external assert,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
     "test": "node ./bin/aria-mocha.js --file ./tmp --include-dir ./tmp --check-coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
@@ -30,9 +31,9 @@
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
   "peerDependencies": {
-    "aria-build": ">= ^0.2.2",
-    "aria-fs": ">= ^0.2.2",
-    "aria-mocha-headless": ">= ^0.2.2"
+    "aria-build": ">= ^0.3.0",
+    "aria-fs": ">= ^0.3.0",
+    "aria-mocha-headless": ">= ^0.3.0"
   },
   "dependencies": {
     "chai": "^4.2.0",
