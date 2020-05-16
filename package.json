@@ -10,7 +10,7 @@
   "scripts": {
     "help": "node ./bin/aria-mocha.js --help",
     "pretest": "ts-node --project ./tools/tsconfig.json ./tools/pre-test.ts",
-    "build": "aria-build -d --external assert,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
+    "build": "aria-build -d --esbuild --external assert,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
     "test": "node ./bin/aria-mocha.js --file ./tmp --include-dir ./tmp --check-coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
@@ -44,18 +44,18 @@
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/istanbul": "^0.4.30",
-    "@types/istanbul-lib-hook": "^2.0.0",
-    "@types/istanbul-lib-instrument": "^1.7.3",
+    "@types/istanbul-lib-hook": "^2.0.1",
+    "@types/istanbul-lib-instrument": "^1.7.4",
     "@types/istanbul-lib-report": "^3.0.0",
     "@types/mocha": "^7.0.2",
     "@types/mock-fs": "^4.10.0",
-    "@types/node": "^13.13.5",
-    "@types/puppeteer": "^2.0.1",
-    "@types/sinon": "^9.0.0",
+    "@types/node": "^14.0.1",
+    "@types/puppeteer": "^2.1.0",
+    "@types/sinon": "^9.0.1",
     "coveralls": "^3.1.0",
     "mock-fs": "^4.12.0",
     "mock-require": "^3.0.3",
     "sinon": "^9.0.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.2"
   }
 }
