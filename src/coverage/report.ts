@@ -1,6 +1,6 @@
 import { createCoverageMap } from '../libs'
 
-import { CoverageOptions } from './options'
+import { CoverageOptions } from './coverage'
 import { reportCoverage } from './report-coverage'
 import { addFileCoverage } from './add-file-coverage'
 
