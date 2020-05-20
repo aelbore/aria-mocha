@@ -31,7 +31,6 @@
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
   "peerDependencies": {
-    "aria-build": ">= ^0.3.0",
     "aria-fs": ">= ^0.3.0",
     "aria-mocha-headless": ">= ^0.3.0"
   },

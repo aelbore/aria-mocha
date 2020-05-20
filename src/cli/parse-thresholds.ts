@@ -1,4 +1,3 @@
-import { ThresholdOptions } from '../coverage'
 
 export function parseThresholds(threshold?: string) {
   const thresholds = threshold?.split(',') ?? []
@@ -9,5 +8,5 @@ export function parseThresholds(threshold?: string) {
       return !!item ? item: value 
     })
   )))
-  return (Object.fromEntries(entries) as ThresholdOptions)
+  return (Object.fromEntries(entries) as import('../coverage').ThresholdOptions)
 }

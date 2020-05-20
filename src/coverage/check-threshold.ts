@@ -1,11 +1,5 @@
 import { CoverageSummary } from '../libs';
-
-export interface ThresholdOptions {
-  statements?: number,
-  lines?: number,
-  functions?: number,
-  branches?: number,
-}
+import { ThresholdOptions } from './coverage'
 
 function logThresholdMessage(emitWarning: boolean, message: string) {
   emitWarning 
