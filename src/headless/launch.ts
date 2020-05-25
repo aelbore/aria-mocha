@@ -41,8 +41,8 @@ export interface TestResult {
 	coverage: any | undefined
 }
 
-export async function launch(url: string) {
-  const browser = await puppeteer.launch({ headless: true })
+export async function launch(url: string, options?: puppeteer.LaunchOptions) {
+  const browser = await puppeteer.launch({ headless: true, ...(options ?? {}) })
 	const result: TestResult = await browser.pages()
 		.then(pages => pages.pop())            
 		.then(async page => {
