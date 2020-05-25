@@ -60,35 +60,4 @@ describe('handler', () => {
     expect(browserHandlerStub.called).toBeFalse()
   })
 
-  it('should execute browser test', async() => {
-    const opts = {
-      _: [],
-      'check-coverage': true,
-      'include-dir': 'src',
-      file: './tmp/cli/update-options.spec.ts',
-      includeDir: 'src',
-      checkCoverage: undefined,
-      files: [],
-      browser: true,
-    }
-
-    const headless = {
-      handler(opts?: CommandLineOptions) {}
-    }
-
-    const optionsSpy = sinon.spy(updateOptions, 'updateOptions')
-    const coverageOptionsStub = sinon.stub(parseOptions, 'parseOptions').returns(null)
-    const cliRunStub = sinon.stub(run, 'cliRun').returns(Promise.resolve())
-
-    const browserHandlerStub = sinon.stub(headless, 'handler')
-    mock('aria-mocha-headless', headless)
-
-    await handler(opts)
-
-    expect(optionsSpy.called).toBeTrue()
-    expect(coverageOptionsStub.called).toBeTrue()
-    expect(browserHandlerStub.called).toBeTrue()
-    expect(cliRunStub.called).toBeFalse()
-  })
-
 })

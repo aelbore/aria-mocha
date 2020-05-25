@@ -10,7 +10,7 @@
   "scripts": {
     "help": "node ./bin/aria-mocha.js --help",
     "pretest": "ts-node --project ./tools/tsconfig.json ./tools/pre-test.ts",
-    "build": "aria-build -d --external assert,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
+    "build": "aria-build -d --resolve aria-fs --external assert,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
     "test": "node ./bin/aria-mocha.js --file ./tmp --include-dir ./tmp --check-coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
@@ -31,8 +31,7 @@
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
   "peerDependencies": {
-    "aria-fs": ">= ^0.3.0",
-    "aria-mocha-headless": ">= ^0.3.0"
+    "puppeteer": ">= 3.1.0"
   },
   "dependencies": {
     "chai": "^4.2.0",
