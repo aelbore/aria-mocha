@@ -1,14 +1,12 @@
 {
   "name": "aria-mocha",
-  "version": "0.3.0",
-  "description": "Simple Testing for your nodejs",
+  "version": "0.4.0",
+  "description": "Zero configuration CLI testing tool for nodejs and browser base",
   "main": "aria-mocha.js",
-  "module": "aria-mocha.es.js",
   "bin": {
     "aria-mocha": "./bin/aria-mocha.js"
   },
   "scripts": {
-    "help": "node ./bin/aria-mocha.js --help",
     "pretest": "ts-node --project ./tools/tsconfig.json ./tools/pre-test.ts",
     "build": "aria-build -d --resolve aria-fs --external assert,istanbul-lib-hook,istanbul-lib-instrument,istanbul-lib-coverage",
     "test": "node ./bin/aria-mocha.js --file ./tmp --include-dir ./tmp --check-coverage",
@@ -25,7 +23,7 @@
     "istanbul"
   ],
   "author": "Arjay Elbore",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aelbore/aria-mocha/issues"
   },
