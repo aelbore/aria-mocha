@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { expect } from 'aria-mocha'
+import { expect } from '../expect'
 
 import { prepareUrl } from './prepare-url'
 
