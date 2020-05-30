@@ -1,6 +1,5 @@
 /* istanbul ignore file */
 
-import { puppeteer } from '../libs'
 import { initMocha, handleConsole } from './init-mocha'
 import { prepareUrl } from './prepare-url'
 
@@ -41,8 +40,10 @@ export interface TestResult {
 	coverage: any | undefined
 }
 
-export async function launch(url: string, options?: puppeteer.LaunchOptions) {
-  const browser = await puppeteer.launch({ headless: true, ...(options ?? {}) })
+export async function launch(url: string, options?: import('puppeteer').LaunchOptions) {
+	const puppeteer = await import('puppeteer')
+	
+	const browser = await puppeteer.launch({ headless: true, ...(options ?? {}) })
 	const result: TestResult = await browser.pages()
 		.then(pages => pages.pop())            
 		.then(async page => {

@@ -1,6 +1,6 @@
 {
   "name": "aria-mocha",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Zero configuration CLI testing tool for nodejs and browser base",
   "main": "aria-mocha.js",
   "bin": {
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/aelbore/aria-mocha#readme",
   "peerDependencies": {
-    "puppeteer": ">= 3.1.0"
+    "puppeteer": ">=3.2.0"
   },
   "dependencies": {
     "chai": "^4.2.0",
@@ -45,7 +45,7 @@
     "@types/istanbul-lib-report": "^3.0.0",
     "@types/mocha": "^7.0.2",
     "@types/mock-fs": "^4.10.0",
-    "@types/node": "^14.0.5",
+    "@types/node": "^14.0.6",
     "@types/puppeteer": "^3.0.0",
     "@types/sinon": "^9.0.4",
     "coveralls": "^3.1.0",
