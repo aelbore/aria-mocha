@@ -41,8 +41,7 @@ export interface TestResult {
 }
 
 export async function launch(url: string, options?: import('puppeteer').LaunchOptions) {
-	const puppeteer = await import('puppeteer')
-	
+	const puppeteer = require('puppeteer')
 	const browser = await puppeteer.launch({ headless: true, ...(options ?? {}) })
 	const result: TestResult = await browser.pages()
 		.then(pages => pages.pop())            
