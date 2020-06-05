@@ -5,9 +5,8 @@
 /// Convert to typescript
 
 import { format } from 'util'
-import { puppeteer } from '../libs'
 
-export function configureViewport(width: number, height: number, page: puppeteer.Page) {
+export function configureViewport(width: number, height: number, page: import('puppeteer').Page) {
 	if (!width && !height) return page;
 	
 	const viewport = page.viewport();

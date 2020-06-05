@@ -44,8 +44,8 @@ export async function launch(url: string, options?: import('puppeteer').LaunchOp
 	const puppeteer = require('puppeteer')
 	const browser = await puppeteer.launch({ headless: true, ...(options ?? {}) })
 	const result: TestResult = await browser.pages()
-		.then(pages => pages.pop())            
-		.then(async page => {
+		.then((pages: import('puppeteer').Page[]) => pages.pop())            
+		.then(async (page: import('puppeteer').Page) => {
 			page.on('console', handleConsole);
 			page.on('dialog', dialog => dialog.dismiss());
 			page.on('pageerror', err => console.error(err));
