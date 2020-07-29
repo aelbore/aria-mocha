@@ -4,8 +4,8 @@ import { coverage } from '../coverage'
 
 import { TestOptions } from './options'
 
-export async function cliRun(options?: TestOptions) {
-  const mocha = new Mocha()
+export async function cliRun(options: TestOptions) {
+  const mocha = new Mocha({ timeout: options.timeout })
   const { src, coverageOptions } = options
 
   const files = Array.isArray(options.files) 

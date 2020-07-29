@@ -18,6 +18,7 @@ export interface TestOptions {
   target?: string
   config?: string
   resolve?: string | boolean
+  timeout?: number
 }
 
 export interface CommandLineOptions extends Omit<TestOptions, 'coverageOptions'> {
@@ -42,6 +43,7 @@ export const getCliOptions = () => {
       { alias: '--file', description: 'Specify file(s) to be loaded prior to root suite execution' },
       { alias: '--check-coverage', description: 'Enable coverage', defaultValue: CHECK_COVERAGE  },
       { alias: '--include-dir', description: 'Directory folder source (default: src)' },
+      { alias: '--timeout', description: 'Timeout threshold value', defaultValue: 1000 },
       { alias: '--browser', description: 'Enable the browser base testing', defaultValue: IS_BROWSER },
       { alias: '--target',  description: 'Target framework or library to build (i.e react, vue or angular)' },
       { alias: '--resolve', description: 'Resolve dependencies' }
