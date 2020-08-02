@@ -1,6 +1,6 @@
 {
   "name": "aria-mocha",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Zero configuration CLI testing tool for nodejs and browser base",
   "main": "aria-mocha.js",
   "bin": {
@@ -43,7 +43,7 @@
     "@types/istanbul-lib-hook": "^2.0.1",
     "@types/istanbul-lib-instrument": "^1.7.4",
     "@types/istanbul-lib-report": "^3.0.0",
-    "@types/mocha": "^8.0.0",
+    "@types/mocha": "^8.0.1",
     "@types/mock-fs": "^4.10.0",
     "@types/node": "^14.0.27",
     "@types/puppeteer": "^3.0.1",
