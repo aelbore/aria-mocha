@@ -8,6 +8,8 @@
     "moduleResolution": "node",
     "outDir": "dist",
     "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "lib" :[
       "dom",
       "es2015",

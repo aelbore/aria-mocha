@@ -1,5 +1,5 @@
 import * as sinon from 'sinon'
-import * as mock from 'mock-require'
+import mock from 'mock-require'
 
 import { expect } from '../expect'
 import { CommandLineOptions } from './options'

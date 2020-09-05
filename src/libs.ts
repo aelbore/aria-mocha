@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 
-import * as Mocha from 'mocha'
+import Mocha from 'mocha'
 import * as ariafs$ from 'aria-fs'
 
 const getInstanbul = async () => {
