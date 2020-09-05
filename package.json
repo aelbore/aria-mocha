@@ -1,6 +1,6 @@
 {
   "name": "aria-mocha",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Zero configuration CLI testing tool for nodejs and browser base",
   "main": "aria-mocha.js",
   "bin": {
