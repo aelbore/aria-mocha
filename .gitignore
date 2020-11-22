@@ -4,3 +4,5 @@ dist
 temp
 /coverage
 tmp
+.envrc
+default.nix
