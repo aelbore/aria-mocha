@@ -8,7 +8,7 @@ const TS_CONFIG_PATH = path.resolve('tsconfig.json')
 const tsconfigDefaults = {
   "target": "es2018",
   "module": "commonjs",
-  "lib" :[ "dom", "es2015", "es2017" ],
+  "lib" :[ "dom", "es2015", "es2017", "es2019" ],
   "allowJs": true
 }
 

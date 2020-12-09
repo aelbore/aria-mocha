@@ -4,7 +4,7 @@ import { expect } from '../expect'
 import { CoverageMap } from '../libs'
 
 import { reportCoverage } from './report-coverage'
-import { ThresholdOptions } from './check-threshold'
+import { ThresholdOptions } from './coverage'
 
 describe('report-coverage', () => {  
   const coverageMap = { getCoverageSummary() {} } as CoverageMap
