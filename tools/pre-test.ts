@@ -1,4 +1,4 @@
-import { copyFiles, clean } from 'aria-build'
+import { copyFiles, clean } from 'aria-fs'
 
 (async function() {
   await Promise.all([ clean('tmp'), clean('coverage') ])
