@@ -34,7 +34,7 @@ describe('getTestFiles', () => {
 
     const result = await getTestFiles('./src/fs', true)
     expect(result.length).equal(1)
-    expect(result.pop()).equal(`./src/fs/${spec}`)
+    expect(result.pop()).equal(['.', 'src', 'fs', spec].join(require('path').sep))
   })
 
   it('should get the test files when file is not typeof file or directory', async () => {
