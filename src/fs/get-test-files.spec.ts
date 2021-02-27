@@ -2,6 +2,7 @@ import mockfs from 'mock-fs'
 
 import { expect } from '../expect'
 import { getTestFiles } from './get-test-files'
+import { normalize } from 'path'
 
 describe('getTestFiles', () => {
 
@@ -19,7 +20,7 @@ describe('getTestFiles', () => {
 
     const result = await getTestFiles('./src/fs/get-test-files.spec.ts', true)
     expect(result.length).equal(1)
-    expect(result.pop()).equal(`./src/fs/${spec}`)
+    expect(normalize(result.pop())).equal(normalize(`./src/fs/${spec}`))
   })
 
   it('should get the test files when file is typeof folder', async () => {
@@ -34,7 +35,7 @@ describe('getTestFiles', () => {
 
     const result = await getTestFiles('./src/fs', true)
     expect(result.length).equal(1)
-    expect(result.pop()).equal(`./src/fs/${spec}`)
+    expect(normalize(result.pop())).equal(normalize(`./src/fs/${spec}`))
   })
 
   it('should get the test files when file is not typeof file or directory', async () => {
