@@ -18,6 +18,8 @@ export async function cliRun(options: TestOptions) {
     mocha.addFile(file)
   }))
 
-  mocha.run() 
-    .on('end', () => codeCoverage.report())
+  mocha.run((failures) => !failures || process.exit(1)) 
+    .on('end', () =>  {
+      codeCoverage.report()
+    })
 }
